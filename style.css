@@ -1,0 +1,13 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Arial";
+}
+
+#error_message {
+	color: red;
+}
+
+#success_message {
+	color: blue;
+}
