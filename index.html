@@ -1,39 +1,65 @@
 <!DOCTYPE>
 <html lang="en">
-  <head>
-    <title>ActiveProspect</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  </head>
-  <body>
-    <div id="error_message"> </div>
-    <div id="success_message"> </div>
-    <div id="sign-up">
-      <h2>Sign-Up</h2>
-      <!-- <form name="lead" action="https://app.leadconduit.com/v2/PostLeadAction." method="/post"> -->
-      <form id="lead_form" name="lead" method="/post">
-        <label for="first">First Name:</label>
-        <input type="text" id="first" name="first_name" value="Rachel">
+	<head>
+		<title>ActiveProspect</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="error_message"> </div>
+		<div id="success_message"> </div>
+		<div id="sign-up">
+			<h2>Sign-Up</h2>
+			<form id="lead_form" name="lead" action="https://app.leadconduit.com/v2/PostLeadAction." method="/post">
+			<!-- <form id="lead_form" name="lead" method="/post"> -->
+				<label for="first">First Name:</label>
+				<input type="text" id="first" name="first_name" value="Rachel">
+				<br/>
+				<label for="last">Last Name:</label>
+				<input type="text" id="last" name="last_name" value="Loziuk">
+				<br/>
+				<label for="email">Email:</label>
+				<input type="text" id="email" name="email" value="user@domain.com">
+				<br/>
+				<label for="phone">Phone Number:</label>
+				<input type="text" id="phone" name="phone_home">
+				<br/>
+        <label for="address1">Street Address:</label>
+        <input type="text" id="address1" name="adress1">
         <br/>
-        <label for="last">Last Name:</label>
-        <input type="text" id="last" name="last_name" value="Loziuk">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
         <br/>
-        <label for="last">Email:</label>
-        <input type="text" id="email" name="email" value="user@domain.com">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
         <br/>
-        <label for="last">Phone Number:</label>
-        <input type="text" id="phone" name="phone_home" value="5125551212">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+        <br/>
+        <label for="postal_code">Zip Code:</label>
+        <input type="text" id="postal_code" name="postal_code">
+        <br/>
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dob">
+        <br/>
+        <label for="CQ1">What is your favorite color?</label>
+        <input type="text" id="CQ1" name="CQ1">
         <br/>
 
-        <input type="hidden" name="xxAccountId" value="0534ql178w">
-        <input type="hidden" name="xxCampaignId" value="053cmvhg3">
-        <input type="hidden" name="xxSiteId" value="0554ktfzj">
-        <input type="hidden" name="xxTest" value="true">
-        <input type="submit" value="Submit" id="submit-button">
+        <input type="hidden" id="ip" name="ip_address">
         <br/>
-      </form>
-  </div>
-  <script type="text/javascript" src="response.js"></script>
+        <input type="hidden" id="site_url" name="site_url">
+        <br/>                
 
-  </body>
+				<input type="hidden" name="xxAccountId" value="0534ql178w">
+				<input type="hidden" name="xxCampaignId" value="053cmvhg3">
+				<input type="hidden" name="xxSiteId" value="0554ktfzj">
+				<input type="hidden" name="xxTest" value="true">
+				<input type="submit" value="Submit" id="submit-button">
+				<br/>
+			</form>
+	</div>
+	<script type="text/javascript" src="response.js"></script>
+
+	</body>
 </html>
