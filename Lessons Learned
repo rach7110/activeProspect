@@ -1,0 +1,3 @@
+JQuery Event handling - .submit vs .click vs :submit
+(form).click was  returning the success/error message whenever any par of the form was clicked. (form).submit fixed the experience so the message only shows when the submit is clicked.
+(':submit').click == (form).submit
