@@ -2,9 +2,8 @@
 //   alert("Works!");
 // });
 
-
 $(document).ready(function(){
-  $('#lead_form').click(function() {
+  $('#lead_form').submit(function() {
     $('div#error_message').empty();
     $('div#success_message').empty();
     var first = document.getElementById("first");
