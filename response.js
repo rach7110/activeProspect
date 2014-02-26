@@ -1,7 +1,23 @@
 // window.onload = (function(){
-//   alert("Works!");
+//   alert("Works!");how
 // });
+  // ----------------Validation: Zip code - US, Canada, UK------------
+$(document).ready(function(){
+  $('.postal').hide();
 
+  $( "#country" ).change(function() {
+    var country = $('#country').val();
+    if(country == "United States") {
+      $('#us_postal').show();
+    } else if(country == "Canada") {
+      $('#canada_postal').show();
+    } else if(country =="United Kingdom") {
+      $('#uk_postal').show();
+    };
+  });
+});
+
+// ------------------Validations: First, Last, Email------------
 $(document).ready(function(){
   $('#lead_form').submit(function() {
     $('div#error_message').empty();
@@ -9,12 +25,12 @@ $(document).ready(function(){
     var first = document.getElementById("first");
     var last = document.getElementById("last");
     var email = document.getElementById("email");
-    // alert("document.getElementById('first').value " + first);
-    if (first.value.length > 25 || first.value == "") {
+    alert("document.getElementById('first').value " + first);
+    if (first.value.length > 255 || first.value == "") {
       $('div#error_message').append("--Enter a valid first name.<br>");
       event.preventDefault();
     } 
-    if (last.value.length > 25 || last.value == "" ) {
+    if (last.value.length > 255 || last.value == "" ) {
       $('div#error_message').append("--Enter a valid last name.<br>");
       event.preventDefault();
     }
@@ -23,16 +39,3 @@ $(document).ready(function(){
     };
   });
 });
-
-// $(document).ready(function(){
-//   $('submit-button').click(function() {
-//     event.preventDefault();
-//     $('div#error_message').empty();
-//     $('div#success_message').empty();
-//     var charFind = document.getElementById("first").value
-//     event.preventDefault();
-//     if (document.getElementById("first").value.length > 25) {
-//       $('div#error_message').append("- Enter a valid first name.<br>");
-//      };
-//   });
-// });

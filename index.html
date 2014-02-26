@@ -10,52 +10,73 @@
 		<div id="success_message"> </div>
 		<div id="sign-up">
 			<h2>Sign-Up</h2>
-			<form id="lead_form" name="lead" action="https://app.leadconduit.com/v2/PostLeadAction." method="/post">
-			<!-- <form id="lead_form" name="lead" method="/post"> -->
+			<!-- <form id="lead_form" name="lead" action="https://app.leadconduit.com/v2/PostLeadAction." method="/post"> -->
+			<form id="lead_form" name="lead" method="/post">
 				<label for="first">First Name:</label>
-				<input type="text" id="first" name="first_name" value="Rachel">
+				<input type="text" id="first" name="first_name"  maxlength="255"/>
 				<br/>
 				<label for="last">Last Name:</label>
-				<input type="text" id="last" name="last_name" value="Loziuk">
+				<input type="text" id="last" name="last_name" maxlength="255"/>
 				<br/>
 				<label for="email">Email:</label>
-				<input type="text" id="email" name="email" value="user@domain.com">
+				<input type="email" id="email" name="email"/>
 				<br/>
 				<label for="phone">Phone Number:</label>
-				<input type="text" id="phone" name="phone_home">
+				<input type="tel" pattern="[0-9]{10}" id="phone" name="phone_home"/>
 				<br/>
         <label for="address1">Street Address:</label>
-        <input type="text" id="address1" name="adress1">
+        <input type="text" id="address1" name="adress1" maxlength="255"/>
         <br/>
         <label for="city">City:</label>
-        <input type="text" id="city" name="city">
+        <input type="text" id="city" name="city" maxlength="25"/>
         <br/>
         <label for="state">State:</label>
         <input type="text" id="state" name="state">
         <br/>
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city">
+        <label for="country">Country:</label>
+        <input list="countries" id="country">
+        <datalist id="countries">
+          <option value="United States">
+          <option value="Canada">
+          <option value="United Kingdom">
+        </datalist>
         <br/>
-        <label for="postal_code">Zip Code:</label>
-        <input type="text" id="postal_code" name="postal_code">
-        <br/>
+        <div class="postal" id="us_postal">
+          <label for="us_postal">Postal Code:</label>
+          <input type="text" id="us_postal" name="postal_code" pattern=".{5,5}" required title="Postal code must contain 5 numbers"/>  
+        </div>
+        <div class="postal" id="canada_postal">
+          <label for="canada_postal">Postal Code:</label>
+          <input type="text" id="canada_postal" name="postal_code" pattern=".{6,6}" required title="Postal code must contain 6 characters">
+        </div>
+        <div class="postal" id="uk_postal">
+          <label for="uk_postal">Postal Code:</label>
+          <input type="text" id="uk_postal" name="postal_code">
+        </div> 
         <label for="dob">Date of Birth:</label>
-        <input type="text" id="dob" name="dob">
+        <input type="date" id="dob" name="dob">
         <br/>
         <label for="CQ1">What is your favorite color?</label>
-        <input type="text" id="CQ1" name="CQ1">
+        <input list="CQ1">
+        <datalist id="CQ1">
+          <option value="Red">
+          <option value="Green">
+          <option value="Blue">
+          <option value="White">
+          <option value="Black">
+          <option value="Other">
+        </datalist>
+        <input type="submit" value="Submit" id="submit-button">
+        <input type=hidden name="env_report" value="<?php print $_SERVER['REMOTE_ADDR']; ?>">
         <br/>
-
-        <input type="hidden" id="ip" name="ip_address">
-        <br/>
-        <input type="hidden" id="site_url" name="site_url">
+        <input type="hidden" id="site_url" name="site_url" maxlength="255"/>
         <br/>                
 
 				<input type="hidden" name="xxAccountId" value="0534ql178w">
 				<input type="hidden" name="xxCampaignId" value="053cmvhg3">
 				<input type="hidden" name="xxSiteId" value="0554ktfzj">
 				<input type="hidden" name="xxTest" value="true">
-				<input type="submit" value="Submit" id="submit-button">
+
 				<br/>
 			</form>
 	</div>
