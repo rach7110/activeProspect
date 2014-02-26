@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>ActiveProspect</title>
@@ -6,8 +6,9 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	</head>
 	<body>
-		<div id="error_message"> </div>
-		<div id="success_message"> </div>
+<!-- Message blocks for First, Last, Email validations using JQuery -->
+<!-- 		<div id="error_message"> </div>
+		<div id="success_message"> </div> -->
 		<div id="sign-up">
 			<h2>Sign-Up</h2>
 			<!-- <form id="lead_form" name="lead" action="https://app.leadconduit.com/v2/PostLeadAction." method="/post"> -->
@@ -22,7 +23,7 @@
 				<input type="email" id="email" name="email"/>
 				<br/>
 				<label for="phone">Phone Number:</label>
-				<input type="tel" pattern="[0-9]{10}" id="phone" name="phone_home"/>
+				<input type="tel" pattern="[0-9]{9}" id="phone" name="phone_home"/>
 				<br/>
         <label for="address1">Street Address:</label>
         <input type="text" id="address1" name="adress1" maxlength="255"/>
@@ -47,7 +48,7 @@
         </div>
         <div class="postal" id="canada_postal">
           <label for="canada_postal">Postal Code:</label>
-          <input type="text" id="canada_postal" name="postal_code" pattern=".{6,6}" required title="Postal code must contain 6 characters">
+          <input type="text" id="canada_postal" name="postal_code">
         </div>
         <div class="postal" id="uk_postal">
           <label for="uk_postal">Postal Code:</label>
@@ -80,7 +81,24 @@
 				<br/>
 			</form>
 	</div>
-	<script type="text/javascript" src="response.js"></script>
-
+  <div>
+    <response class="response">Test: this is a made up response</response>
+  </div>
+	<script type="text/javascript" src="lead.js"></script>
+  <script type="text/javascript" src="response-msg.js"></script>
+  <script type="text/javascript">
+    (function() {
+      var field = 'xxTrustedFormCertUrl';
+      var provideReferrer = false;
+      var tf = document.createElement('script');
+      tf.type = 'text/javascript'; tf.async = true;
+      tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') + '://api.trustedform.com/trustedform.js?provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&l='+newDate().getTime()+Math.random();
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(tf, s); }
+      )();
+    </script>
+    <noscript>
+      <img src="http://api.trustedform.com/ns.gif" />
+    </noscript>
 	</body>
 </html>
